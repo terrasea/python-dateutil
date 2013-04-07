@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
-from cStringIO import StringIO
+from io import StringIO
 import unittest
 import calendar
 import time
@@ -2999,7 +2999,7 @@ class ParserTest(unittest.TestCase):
                                   tzinfo=self.brsttz))
 
     def testDateCommandFormatUnicode(self):
-        self.assertEqual(parse(u"Thu Sep 25 10:36:28 BRST 2003",
+        self.assertEqual(parse("Thu Sep 25 10:36:28 BRST 2003",
                                tzinfos=self.tzinfos),
                          datetime(2003, 9, 25, 10, 36, 28,
                                   tzinfo=self.brsttz))
